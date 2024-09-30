@@ -94,8 +94,7 @@ def main():
     res = get_job_status(job_id, deheaders)
     df = pd.read_csv(res)
   
-    folder_path = "./data_folder"
-    os.makedirs(folder_path, exist_ok=True)
+    folder_path = "/data"
   
     file_name = f"{end_date}_output.csv"
     file_path = os.path.join(folder_path, file_name)
