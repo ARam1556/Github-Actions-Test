@@ -95,6 +95,7 @@ def main():
     df = pd.read_csv(res)
   
     folder_path = "/data"
+    os.makedirs(folder_path, exist_ok=True)
   
     file_name = f"{end_date}_output.csv"
     file_path = os.path.join(folder_path, file_name)
