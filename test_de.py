@@ -8,7 +8,7 @@ password = os.environ["password"]
 client_id = os.environ["client_id"]
 client_secret = os.environ["client_secret"]
 start_date = (date.today() - timedelta(1)).strftime("%Y-%m-%d")
-end_date = date.today().strftime("%Y-%m-%d)
+end_date = date.today().strftime("%Y-%m-%d")
 
 def main():
   # returns the url for the job if successful
