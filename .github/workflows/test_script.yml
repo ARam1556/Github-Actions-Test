@@ -37,3 +37,14 @@ jobs:
       - name: Run Python Script
         run: |
           python test_de.py
+
+      # commit CSV file to repo
+      - name: Commit and push Changes
+        run: |
+          git config --local user.email "anish.ramanadham@owens-minor.com"
+          git config --local user.name "github-actions[bot]"
+          git add ./data_folder/data_file.csv
+          git commit -m "Add CSV file from workflow run"
+          git push
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN}}
