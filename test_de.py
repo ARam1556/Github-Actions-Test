@@ -94,12 +94,11 @@ def main():
     res = get_job_status(job_id, deheaders)
     df = pd.read_csv(res)
   
-    folder_path = "/data"
-    os.makedirs(folder_path, exist_ok=True)
+    if not os.path.exists('data'):
+      os.makedirs('data')
   
-    file_name = f"{end_date}_output.csv"
-    file_path = os.path.join(folder_path, file_name)
-    df.to_csv(file_path, index=False)
+    file_name = f"data/{end_date}_output.csv"
+    df.to_csv(file_name, index=False)
 
 if __name__ == '__main__':
     main()
