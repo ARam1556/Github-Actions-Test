@@ -40,7 +40,7 @@ jobs:
       # Run the script
       - name: Run Python Script
         run: |
-          python test_de.py
+          python sendtoblob.py
 
       # commit CSV file to repo
       - name: Commit and push Changes
