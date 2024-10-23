@@ -35,7 +35,7 @@ jobs:
       # Runs a set of commands using the runners shell
       - name: Install Dependencies
         run: |
-          pip install requests pandas
+          pip install requests pandas datetime configparse azure.storage.blob io
 
       # Run the script
       - name: Run Python Script
