@@ -43,17 +43,17 @@ jobs:
           python sendtoblob.py
 
       # commit CSV file to repo
-      - name: Commit and push Changes
-        run: |
-          git config --local user.email "anish.ramanadham@owens-minor.com"
-          git config --local user.name "github-actions[bot]"
-          git add data/*
-          git commit -a -m "Add CSV file from workflow run"
+      #- name: Commit and push Changes
+       # run: |
+        #  git config --local user.email "anish.ramanadham@owens-minor.com"
+         # git config --local user.name "github-actions[bot]"
+          #git add data/*
+          #git commit -a -m "Add CSV file from workflow run"
 
-      - name: push changes
-        uses: ad-m/github-push-action@master
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN}}
-          branch: ${{ github.ref}}
-          directory: .
-          force: true
+      #- name: push changes
+       # uses: ad-m/github-push-action@master
+        #with:
+         # github_token: ${{ secrets.GITHUB_TOKEN}}
+          #branch: ${{ github.ref}}
+          #directory: .
+          #force: true
