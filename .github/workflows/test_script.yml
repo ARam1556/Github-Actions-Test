@@ -13,6 +13,8 @@ env:
   password: ${{ secrets.PASSWORD}}
   client_id: ${{ secrets.CLIENT_ID}}
   client_secret: ${{ secrets.CLIENT_SECRET}}
+  connection_string: ${{ secrets.CONNECTION_STRING}}
+  container_name: ${{ secrets.CONTAINER_NAME}}
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -35,7 +37,7 @@ jobs:
       # Runs a set of commands using the runners shell
       - name: Install Dependencies
         run: |
-          pip install requests pandas datetime configparse azure.storage.blob
+          pip install requests pandas datetime azure.storage.blob
 
       # Run the script
       - name: Run Python Script
