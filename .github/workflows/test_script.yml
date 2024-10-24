@@ -14,7 +14,7 @@ env:
   client_id: ${{ secrets.CLIENT_ID}}
   client_secret: ${{ secrets.CLIENT_SECRET}}
   connection_string: ${{ secrets.CONNECTION_STRING}}
-  container_name: ${{ secrets.CONTAINER_NAME}}
+  container_name: ${{ secrets.CONTAINTER_NAME}}
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
