@@ -1,3 +1,4 @@
+import os
 import time
 import requests
 import pandas as pd
@@ -6,21 +7,18 @@ from configparser import ConfigParser
 from azure.storage.blob import BlobServiceClient
 from io import BytesIO  # For in-memory file handling
 
-# Load configuration
-config = ConfigParser()
-config.read("config.ini")
-
 # Get Azure Blob Storage credentials from config
-azure_connection_string = config.get("AZURE_BLOB", "connection_string")
-container_name = config.get("AZURE_BLOB", "container_name")
+azure_connection_string = os.environ["connection_string"]
+container_name = os.environ["container_name"]
 
 # Get RingCentral credentials from config
-username = config.get("RINGCENTRAL", "username")
-password = config.get("RINGCENTRAL", "password")
-client_id = config.get("RINGCENTRAL", "client_id")
-client_secret = config.get("RINGCENTRAL", "client_secret")
+username = os.environ["username"]
+password = os.environ["password"]
+client_id = os.environ["client_id"]
+client_secret = os.environ["client_secret"]
 start_date = (date.today() - timedelta(1)).strftime("%Y-%m-%d")
 end_date = date.today().strftime("%Y-%m-%d")
+
 
 def main():
     def get_job_status(job_id, headers, max_retries=5):
